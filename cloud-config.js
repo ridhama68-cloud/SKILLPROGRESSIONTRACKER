@@ -1,7 +1,6 @@
-// Add your Supabase Project URL and publishable key here. These are not service-role secrets.
-// Keep SUPABASE_SERVICE_ROLE_KEY and AI provider keys on the server only.
+// Safe browser configuration: Supabase publishable keys are intended for public clients.
 window.STEADY_CLOUD_CONFIG = {
-  supabaseUrl: '',
-  publishableKey: '',
+  supabaseUrl: 'https://qiatsylvyjlxmbvhxomg.supabase.co',
+  publishableKey: 'sb_publishable_tM4UyW65xi5hnTHjtyZr5w_Ou0JeRmD',
   workspaceName: 'Family practice',
 };
