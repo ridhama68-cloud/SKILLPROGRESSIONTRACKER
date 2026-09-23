@@ -32,3 +32,9 @@ For authenticated data access, the frontend uses a Supabase publishable key and 
 ## Focus timer
 
 The dashboard includes a task-linked focus timer with a completion reminder. Where supported, it can request browser permission to pause after two minutes of inactivity. Browser pages cannot identify which other desktop application is open (for example, CapCut versus a game); that requires a separately installed desktop companion with operating-system permissions.
+
+## Windows app-aware companion
+
+Download [`steady-companion.ps1`](steady-companion.ps1) from the repository, then right-click it and choose **Run with PowerShell**. Enter a practice such as “Clipping,” add its allowed process name such as `CapCut`, and start a focus session. The companion pauses if another app becomes active or if the PC is idle for the selected limit. It watches process names only; it does not capture screen content or upload usage data. It is a separate timer and does not synchronize with the browser timer yet.
+
+The companion uses Windows Forms and built-in Windows APIs. Settings stay on the PC in `%LOCALAPPDATA%\SteadyCompanion`; session activity is not stored. It does not launch automatically at sign-in.
