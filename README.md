@@ -27,3 +27,8 @@ Photo submissions upload to the private storage bucket and are visible to their 
 - Compare rolling completion, quantitative change, and coaching notes.
 
 For authenticated data access, the frontend uses a Supabase publishable key and relies on Postgres row-level security. The Supabase security guide explains why exposed tables need both explicit grants and RLS policies: [Supabase: Secure your data](https://supabase.com/docs/guides/database/secure-data), [Supabase: Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security). Private file access is controlled by Storage policies: [Supabase: Storage access control](https://supabase.com/docs/guides/storage/security/access-control).
+
+
+## Focus timer
+
+The dashboard includes a task-linked focus timer with a completion reminder. Where supported, it can request browser permission to pause after two minutes of inactivity. Browser pages cannot identify which other desktop application is open (for example, CapCut versus a game); that requires a separately installed desktop companion with operating-system permissions.
