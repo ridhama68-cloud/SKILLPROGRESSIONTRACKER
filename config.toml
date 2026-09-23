@@ -1,4 +1,4 @@
-project_id = "steady-habit-tracker"
+project_id = "qiatsylvyjlxmbvhxomg"
 
 [functions.invite-member]
-verify_jwt = true
+verify_jwt = false
