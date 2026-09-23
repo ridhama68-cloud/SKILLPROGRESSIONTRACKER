@@ -177,7 +177,13 @@ async function startCloud() {
       invite.disabled = true;
       const { error } = await client.functions.invoke('invite-member', { body:{ workspaceId, displayName, email } });
       invite.disabled = false;
-      if (error) { toast('Invite failed. Check the Edge Function setup.'); return; }
+      if (error) {
+        let message = error.message;
+        try { const body = await error.context.clone().json(); message = body.error || body.message || message; } catch {}
+        console.error('Invite failed:', message);
+        toast('Invite failed: ' + message);
+        return;
+      }
       toast('Invitation sent.');
     };
     document.querySelectorAll('[data-remove-user]').forEach(button => button.onclick = async () => {
